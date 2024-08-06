@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PI</title>
+</head>
+<body>
+<form action="/pi" method="get">
+    search: <input type="text" name="name" th:value="${name}"><br>
+    <input type="submit" value="search"/>
+</form>
+<p>You searched for: <span th:text="${name}"></span></p>
+</body>
+</html>
