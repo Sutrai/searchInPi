@@ -7,9 +7,11 @@
 <body>
 <form action="/pi" method="get">
     search: <label>
-    <input type="text" name="name">
+    <input type="number" name="name">
 </label><br>
-    <input type="submit" value="search"/>
+    <label>
+        <input type="submit" value="search"/>
+    </label>
 </form>
 <p>You searched for: <span th:text="1"></span></p>
 </body>

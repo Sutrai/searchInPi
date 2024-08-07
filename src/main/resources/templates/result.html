@@ -5,7 +5,18 @@
     <title>result</title>
 </head>
 <body>
-<p>position: <span th:text="${position}"></span></p>
-<p>line: <span th:text="${subString}"></span></p>
+
+<div th:if="${subString != null}">
+    <h2>Result</h2>
+    <div th:if="${subString.get(0) == 'Number not found in pi'}">
+        <p>Number not found in pi</p>
+    </div>
+    <div th:if="${subString.get(0) != 'Number not found in pi'}">
+        <p>Before: <span th:text="${subString.get(0)}"></span></p>
+        <p>Number: <span th:text="${subString.get(1)}" style="font-weight: bold;"></span></p>
+        <p>After: <span th:text="${subString.get(2)}"></span></p>
+        <p>Index: <span th:text="${subString.get(3)}"></span></p>
+    </div>
+</div>
 </body>
 </html>

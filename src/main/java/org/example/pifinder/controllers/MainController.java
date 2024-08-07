@@ -24,12 +24,7 @@ public class MainController {
 
     @GetMapping("pi")
     public String search(@RequestParam("name") String name, Model model) throws IOException {
-        String pi = piFinder.parsingFileWithPi();
-        int index = piFinder.searchForNumberIndex(name);
-        String subString = piFinder.searchForSubstringsFromIndex(pi, index);
-
-        model.addAttribute("position", index);
-        model.addAttribute("subString", subString);
+        model.addAttribute("subString", piFinder.findIndex(name));
         return "result";
     }
 
