@@ -6,9 +6,11 @@
 </head>
 <body>
 <form action="/pi" method="get">
-    search: <input type="text" name="name" th:value="${name}"><br>
+    search: <label>
+    <input type="text" name="name">
+</label><br>
     <input type="submit" value="search"/>
 </form>
-<p>You searched for: <span th:text="${name}"></span></p>
+<p>You searched for: <span th:text="1"></span></p>
 </body>
 </html>

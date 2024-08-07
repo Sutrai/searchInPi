@@ -5,14 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
 @Controller
 public class MainController {
 
-    private PiFinder piFinder;
+    private final PiFinder piFinder;
 
     public MainController(PiFinder piFinder) {
         this.piFinder = piFinder;
@@ -25,8 +24,13 @@ public class MainController {
 
     @GetMapping("pi")
     public String search(@RequestParam("name") String name, Model model) throws IOException {
-        model.addAttribute("name", piFinder.piSearch(name));
-        return "first";
+        String pi = piFinder.parsingFileWithPi();
+        int index = piFinder.searchForNumberIndex(name);
+        String subString = piFinder.searchForSubstringsFromIndex(pi, index);
+
+        model.addAttribute("position", index);
+        model.addAttribute("subString", subString);
+        return "result";
     }
 
 }
