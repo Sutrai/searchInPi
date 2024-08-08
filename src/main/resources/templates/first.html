@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>PI</title>
+    <style>
+        body{
+            background-color: #FFE5B4;
+            font-size: 40px;
+            left: 850px;
+            position: absolute;
+            overflow: hidden;
+            color: burlywood;
+
+        }
+        .PI{
+            font-size: 350px;
+            color: wheat;
+
+            margin-right: 140px;
+            background-color:rgba(233, 150, 122);
+            border-radius: 38%;
+        }
+        .kok{
+            display: flex;
+            left: 150px;
+        }
+
+
+    </style>
 </head>
 <body>
-<form action="/pi" method="get">
-    search: <label>
-    <input type="number" name="name">
-</label><br>
-    <label>
-        <input type="submit" value="search"/>
-    </label>
-</form>
-<p>You searched for: <span th:text="1"></span></p>
+<div class="verx">
+    <form action="/pi" method="get">
+        <b>search:</b> <label>
+        <input  type="number" name="name" placeholder="Ввдедите число...">
+    </label><br>
+        <label class="kok">
+            <input type="submit" value="search" />
+        </label>
+    </form>
+    <p><b>You searched for: <span th:text="1"></span></b></p>
+</div>
+<div class="PI">
+    <p>PI</p>
+
+</div>
 </body>
 </html>
